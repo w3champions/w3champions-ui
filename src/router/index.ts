@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import Rankings from "@/views/Rankings.vue";
 import CountryRankings from "@/views/CountryRankings.vue";
 import Tournaments from "@/views/Tournaments.vue";
+import TournamentHistory from "@/views/TournamentsHistory.vue"
 import Player from "@/views/Player.vue";
 import Imprint from "@/views/Imprint.vue";
 import MatchDetail from "@/views/MatchDetail.vue";
@@ -174,7 +175,7 @@ const routes = [
   {
     path: "/tournaments",
     name: "Tournaments",
-    component: Tournaments,
+    component: TournamentHistory,
   },
 ];
 

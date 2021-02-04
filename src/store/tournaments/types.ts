@@ -45,3 +45,11 @@ export interface ITournament {
     startsOn: Date;
     matcherinoLink: string;
 }
+
+export interface ITournamentRecord {
+    state : number;
+    mode : number;
+    winner : string;
+    date : Date;
+    name : string;
+}

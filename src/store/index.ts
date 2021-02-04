@@ -2,6 +2,7 @@ import Vue from "vue";
 import Vuex from "vuex";
 import { createDirectStore } from "direct-vuex";
 
+import tournamentsHistory from "./tournamentsHistory/index";
 import tournaments from "./tournaments/index";
 import player from "./player/index";
 import matches from "./match/index";
@@ -26,6 +27,7 @@ import ClanService from "@/services/ClanService";
 import TwitchService from "@/services/TwitchService";
 import AdminService from "@/services/AdminService";
 import TournamentsService from "@/services/TournamentsService";
+import TournamentsHistoryService from "@/services/TournamentsHistoryService";
 
 
 Vue.use(Vuex);
@@ -40,7 +42,8 @@ const services = {
   clanService: new ClanService(),
   twitchService: new TwitchService(),
   adminService: new AdminService(),
-  tournamentsService: new TournamentsService()
+  tournamentsService: new TournamentsService(),
+  tournamentsHistoryService: new TournamentsHistoryService(50)
 };
 
 const mod = {
@@ -54,7 +57,8 @@ const mod = {
     clan,
     twitch,
     admin,
-    tournaments
+    tournaments,
+    tournamentsHistory
   },
   state: {
     darkMode: false,
@@ -100,6 +104,9 @@ const mod = {
     },
     tournamentsService() {
       return services.tournamentsService;
+    },
+    tournamentsHistoryService() {
+      return services.tournamentsHistoryService;
     }
   },
 } as const;
